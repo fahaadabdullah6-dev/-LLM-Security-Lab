@@ -1,7 +1,4 @@
-# 🔐 LLM Security Lab — Privacy & Attack Detection
-
-> **Academic Research Project** | MSc Cybersecurity → PhD Application Portfolio  
-> **Target:** University of Southampton — Dr. Han Wu (LLM Security & Privacy)  
+#  LLM Security Lab — Privacy & Attack Detection 
 > **Author:** Fahad Ali | MSc Cybersecurity
 
 A practical research lab demonstrating privacy leakage, prompt injection,
@@ -10,43 +7,10 @@ detection and severity scoring engine.
 
 **No API key required** — runs entirely on free Hugging Face models.
 
----
-
-## 📐 Architecture Diagram
-
-```
-┌──────────────────────────────────────────────────────────────────┐
-│                     LLM SECURITY LAB                             │
-│                                                                  │
-│  ┌─────────────┐    prompts    ┌──────────────────┐              │
-│  │   ATTACKS   │ ────────────▶ │   FREE LLM       │              │
-│  │             │               │   (HuggingFace)  │              │
-│  │ 💉 Prompt    │               │   GPT-2 / FLAN   │              │
-│  │   Injection │               └────────┬─────────┘              │
-│  │             │                        │ responses              │
-│  │ 🔓 Jailbreak │                        ▼                        │
-│  │             │               ┌──────────────────┐              │
-│  │ 🕵️ Privacy   │               │  DETECTION       │              │
-│  │   Leakage   │               │  ENGINE          │              │
-│  │             │               │                  │              │
-│  │ 🔁 Prompt    │               │ • PII detection  │              │
-│  │   Injection │               │ • Injection check│              │
-│  └─────────────┘               │ • Jailbreak scan │              │
-│                                │ • Severity score │              │
-│                                └────────┬─────────┘              │
-│                                         │                        │
-│                          ┌──────────────▼──────────┐             │
-│                          │      ALERT PIPELINE      │             │
-│                          │                          │             │
-│                          │  📄 logs/alerts.log      │             │
-│                          │  📊 Terminal Dashboard   │             │
-│                          └──────────────────────────┘             │
-└──────────────────────────────────────────────────────────────────┘
-```
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 LLM-Security-Lab/
@@ -74,7 +38,7 @@ LLM-Security-Lab/
 
 ---
 
-## ⚙️ Setup
+## Setup
 
 ```bash
 git clone https://github.com/fahaadabdullah6-dev/LLM-Security-Lab.git
@@ -89,7 +53,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Running the Lab
+##  Running the Lab
 
 ```bash
 # Terminal 1 — Run all attacks
@@ -103,22 +67,22 @@ python dashboard/terminal_dashboard.py
 
 ---
 
-## ⚔️ Attack Scenarios
+##  Attack Scenarios
 
-### 1. 💉 Prompt Injection
+### 1. Prompt Injection
 Malicious instructions hidden inside user input that hijack the LLM's
 intended behaviour — e.g. "Ignore previous instructions and do X instead."
 
 **Real-world impact:** Attacker controls LLM-powered apps (chatbots,
 assistants, RAG pipelines) to perform unintended actions.
 
-### 2. 🔓 Jailbreak
+### 2. Jailbreak
 Attempts to bypass the model's safety training using role-play, fictional
 framing, or encoded instructions — making it produce harmful content.
 
 **Real-world impact:** Circumventing content filters in deployed AI systems.
 
-### 3. 🕵️ Privacy Leakage
+### 3. Privacy Leakage
 Crafted prompts designed to extract PII (names, emails, phone numbers)
 or confidential data that may have been memorised during training.
 
@@ -135,21 +99,4 @@ or confidential data that may have been memorised during training.
 | Safety Bypassing | Jailbreak pattern simulation |
 | Anomaly Detection | Pattern matching + ML scoring |
 
-**PhD Extension directions:**
-- Machine unlearning to remove sensitive training data
-- Differential privacy in fine-tuning
-- RAG pipeline vulnerability analysis
-- Formal auditing framework for LLM deployments
 
----
-
-## 📚 References
-
-- Perez & Ribeiro (2022) — Prompt Injection Attacks Against LLMs
-- Carlini et al. (2021) — Extracting Training Data from LLMs
-- OWASP Top 10 for LLMs: https://owasp.org/www-project-top-10-for-large-language-model-applications/
-- Dr. Han Wu's research: https://www.southampton.ac.uk/people/65cgfc/doctor-han-wu
-
----
-
-*Built as part of PhD application portfolio — University of Southampton*
